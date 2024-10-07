@@ -73,7 +73,6 @@ public class DecryptionPanel extends JPanel {
                     String []decrypted = new String[ciphertext.length()];
                     encrypted=SDES.charToBinaryStringArray(ciphertext);
                     for(int i=0;i<ciphertext.length();i++){
-                        encrypted[i]=SDES.encrypt(encrypted[i],key);
                         decrypted[i]=SDES.decrypt(encrypted[i],key);
                     }
                     String decrypted1=SDES.binaryStringArrayToString(decrypted);

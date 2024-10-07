@@ -70,11 +70,9 @@ public class EncryptionPanel extends JPanel {
                     encryptedField.setText(encrypted);
                 }else{
                     String []encrypted;
-                    String []decrypted = new String[plaintext.length()];
                     encrypted=SDES.charToBinaryStringArray(plaintext);
                     for(int i=0;i<plaintext.length();i++){
                         encrypted[i]=SDES.encrypt(encrypted[i],key);
-                        decrypted[i]=SDES.decrypt(encrypted[i],key);
                     }
                     String encrypted1=SDES.binaryStringArrayToString(encrypted);
                     encryptedField.setText(encrypted1);
